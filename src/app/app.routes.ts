@@ -19,6 +19,14 @@ export const routes: Routes = [
         loadChildren: () => import('./views/dashboard/routes').then((m) => m.routes)
       },
       {
+        path: 'academico',
+        loadChildren: () => import('./views/academico/routes').then((m) => m.routes)
+      },
+      {
+        path: 'matricula',
+        loadChildren: () => import('./views/matriculas/routes').then((m) => m.routes)
+      },
+      {
         path: 'theme',
         loadChildren: () => import('./views/theme/routes').then((m) => m.routes)
       },

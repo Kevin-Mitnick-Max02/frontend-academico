@@ -1,0 +1,105 @@
+<c-row ngPreserveWhitespaces>
+    <c-col xs="12">
+      <c-card class="mb-4">
+        <c-card-header>
+          <strong>MATRICULA</strong>
+        </c-card-header>
+        <c-card-body>
+            <form cForm>
+                <div class="mb-3">
+                    <label cLabel for="ci">Estudiante</label>
+                    <select aria-label="Default select example" cSelect>
+                      <option>Seleccione estudiante</option>
+                      <option value="1">Juan</option>
+                      <option value="2">Kevin</option>
+                      <option value="3">Jose</option>
+                    </select>
+                  </div>
+              <div class="mb-3">
+                <label cLabel for="nombres">Materia</label>
+                <select aria-label="Default select example" cSelect>
+                  <option>Seleccione materia</option>
+                  <option value="1">Juan</option>
+                  <option value="2">Kevin</option>
+                  <option value="3">Jose</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <label cLabel for="apellidos">Docente</label>
+                <select aria-label="Default select example" cSelect>
+                  <option>Seleccione docente</option>
+                  <option value="1">Juan</option>
+                  <option value="2">Kevin</option>
+                  <option value="3">Jose</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <label cLabel for="fecha_matricula">Fecha</label>
+                <input cFormControl
+                       id="fecha_matricula"
+                       placeholder="2024-05-21"
+                       type="date"
+                />
+              </div>
+              <div class="mb-3">
+                <label cLabel for="Periodo">Periodo</label>
+                <input cFormControl
+                       id="Periodo"
+                       placeholder="Anual"
+                       type="text"
+                />
+              </div>
+              <div class="mb-3">
+                <label cLabel for="numero_semestre">Semestre</label>
+                <input cFormControl
+                       id="numero_semestre"
+                       placeholder="0"
+                       type="number"
+                />
+              </div>
+              <div class="mb-3">
+                <label cLabel for="anio_estudio">Año de estudio</label>
+                <input cFormControl
+                       id="anio_estudio"
+                       placeholder="1"
+                       type="number"
+                />
+              </div>
+              <button cButton class="me-1" color="primary" type="submit">
+                Guardar
+              </button>
+            </form>
+        </c-card-body>
+      </c-card>
+      </c-col>
+      <c-col xs="12">
+        <table cTable>
+          <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Estudiante</th>
+            <th scope="col">Materia</th>
+            <th scope="col">Docente</th>
+            <th scope="col">Fecha</th>
+            <th scope="col">Periodo</th>
+            <th scope="col">Semestre</th>
+            <th scope="col">Año de estudio</th>
+            <th scope="col">Acciones</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>Tomas</td>
+            <td>2024-05-27</td>
+            <td>Anual</td>
+            <td>0</td>
+            <td>1</td>
+            <td><button cButton color="warning" variant="outline">Editar</button><button cButton color="danger" variant="outline">Eliminar</button></td>
+          </tr>
+          </tbody>
+        </table>
+      </c-col>
+      </c-row>

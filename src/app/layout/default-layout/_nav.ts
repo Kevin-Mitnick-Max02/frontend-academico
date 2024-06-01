@@ -10,6 +10,51 @@ export const navItems: INavData[] = [
       text: 'NEW'
     }
   },
+  //---Docente inicio
+  {
+    title: true,
+    name: 'Indice de Docentes'
+
+  },
+  {
+    name: 'Academico',
+    url: '/academico',
+    iconComponent: { name: 'cil-puzzle' },
+    children: [
+      {
+        name: 'Docentes',
+        url: '/academico/docentes',
+        icon: 'nav-icon-bullet'
+      },
+      {
+        name: 'Reportes',
+        url: '/academico/reportes',
+        icon: 'nav-icon-bullet'
+      }
+    ]
+  },
+  
+  //---Docente final
+
+  //----Materia Inicio
+  {
+    name: 'Matricula',
+    url: '/matricula',
+    iconComponent: { name: 'cil-puzzle' },
+    children: [
+      {
+        name: 'Matriculas',
+        url: '/matricula/matriculas',
+        icon: 'nav-icon-bullet'
+      },
+      {
+        name: 'Reportes',
+        url: '/matricula/reportes',
+        icon: 'nav-icon-bullet'
+      },
+    ]
+  },
+  //-----Materia final
   {
     title: true,
     name: 'Theme'

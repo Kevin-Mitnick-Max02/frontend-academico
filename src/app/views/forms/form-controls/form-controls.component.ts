@@ -9,7 +9,10 @@ import { RowComponent, ColComponent, TextColorDirective, CardComponent, CardHead
     templateUrl: './form-controls.component.html',
     styleUrls: ['./form-controls.component.scss'],
     standalone: true,
-    imports: [RowComponent, ColComponent, TextColorDirective, CardComponent, CardHeaderComponent, CardBodyComponent, DocsExampleComponent, ReactiveFormsModule, FormsModule, FormDirective, FormLabelDirective, FormControlDirective, ButtonDirective, NgStyle]
+    imports: [RowComponent, ColComponent, TextColorDirective, CardComponent, 
+      CardHeaderComponent, CardBodyComponent, DocsExampleComponent, 
+      ReactiveFormsModule, FormsModule, FormDirective, FormLabelDirective, 
+      FormControlDirective, ButtonDirective, NgStyle]
 })
 export class FormControlsComponent {
 
