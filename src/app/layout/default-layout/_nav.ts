@@ -17,7 +17,24 @@ export const navItems: INavData[] = [
 
   },
   {
-    name: 'Academico',
+    name: 'Estudiante',
+    url: '/estudiantes',
+    iconComponent: { name: 'cil-puzzle' },
+    children: [
+      {
+        name: 'Estudiante',
+        url: '/estudiantes/estudiante',
+        icon: 'nav-icon-bullet'
+      },
+      /*{
+        name: 'Reportes',
+        url: '/academico/reportes',
+        icon: 'nav-icon-bullet'
+      }*/
+    ]
+  },
+  {
+    name: 'Docente',
     url: '/academico',
     iconComponent: { name: 'cil-puzzle' },
     children: [
@@ -26,11 +43,11 @@ export const navItems: INavData[] = [
         url: '/academico/docentes',
         icon: 'nav-icon-bullet'
       },
-      {
+      /*{
         name: 'Reportes',
         url: '/academico/reportes',
         icon: 'nav-icon-bullet'
-      }
+      }*/
     ]
   },
   

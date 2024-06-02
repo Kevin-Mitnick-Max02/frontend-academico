@@ -7,6 +7,7 @@ import { Observable } from "rxjs";
 })
 export class MatriculaServices {
     private API_URL = 'http://localhost:800/matricula';
+    private API_URL1 = 'http://localhost:800/estudiantes';
     constructor(private http: HttpClient){
 
     }
@@ -21,5 +22,8 @@ export class MatriculaServices {
     }
     editarMatricula(matricula: MatriculaModel) : Observable<MatriculaModel>{
         return this.http.put<MatriculaModel>(this.API_URL+'/editar/'+matricula._id, matricula);
+    }
+    getReporte1 (): Observable<MatriculaModel[]>{
+        return this.http.get<MatriculaModel[]>(this.API_URL1+'/reporte/no-matriculados');
     }
 }

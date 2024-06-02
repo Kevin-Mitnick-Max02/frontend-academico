@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { NgStyle } from '@angular/common';
-import { DocenteModel } from "../models/docente.model";
-import { DocenteServices } from "../services/docente.service";
+import { EstudianteModel } from "../../estudiantes/models/estudiante.model";
+import { EstudianteServices } from "../../estudiantes/services/estudiante.service";
 import { DocsExampleComponent } from '@docs-components/public-api';
 import { RowComponent, ColComponent, TableColorDirective, 
   TableActiveDirective, TextColorDirective, FormSelectDirective, 
@@ -18,72 +18,72 @@ import { RowComponent, ColComponent, TableColorDirective,
     ReactiveFormsModule, FormsModule, FormDirective, FormLabelDirective, 
     FormControlDirective, ButtonDirective, NgStyle, FormSelectDirective, 
     TableDirective,TableColorDirective, TableActiveDirective, BorderDirective],
-  templateUrl: './docente.component.html',
-  styleUrl: './docente.component.scss'
+  templateUrl: './estudiante.component.html',
+  styleUrl: './estudiante.component.scss'
 })
 export class DocenteComponent {
-  listaDocentes : DocenteModel[] = [];
-  docenteModelo : DocenteModel = new DocenteModel();
+  listaEstudiantes : EstudianteModel[] = [];
+  estudianteModelo : EstudianteModel = new EstudianteModel();
 
-  constructor(private docenteService: DocenteServices){
-    this.getDocentes();
+  constructor(private estudianteService: EstudianteServices){
+    this.getEstudiante();
   }
-  getDocentes(){
-    this.docenteService.getTodosLosDocente().subscribe({
+  getEstudiante(){
+    this.estudianteService.getTodosLosEstudiantes().subscribe({
       next : (Response) => {
         console.log(Response);
-        this.listaDocentes = Response;
+        this.listaEstudiantes = Response;
       },
       error: (error) => {
         console.log(error);
       }
     });
   };
-  guardarDocente(){
-      console.log(this.docenteModelo);
-       if(this.docenteModelo._id == ''){
-        console.log("guardar", this.docenteModelo);
-        this.agregarDocente();
+  guardarEstudiante(){
+      console.log(this.estudianteModelo);
+       if(this.estudianteModelo._id == ''){
+        console.log("guardar", this.estudianteModelo);
+        this.agregarEstudiante();
        }else{
-        console.log("editar", this.docenteModelo);
-        this.editarDocente();
+        console.log("editar", this.estudianteModelo);
+        this.editarEstudiante();
        }
   }
-  verDocente(m : DocenteModel){
-    this.docenteModelo = m;
+  verEstudiante(e : EstudianteModel){
+    this.estudianteModelo = e;
   }
-  agregarDocente(){
-    this.docenteService.agregarDocente(this.docenteModelo).subscribe({
+  agregarEstudiante(){
+    this.estudianteService.agregarEstudiante(this.estudianteModelo).subscribe({
       next : (Response) => {
         console.log(Response);
         console.log("Datos registrados exitosamente",Response); 
-        this.getDocentes();
-        this.docenteModelo = new DocenteModel();
+        this.getEstudiante();
+        this.estudianteModelo = new EstudianteModel();
       },
       error: (error) => {
         console.log(error);
       }
     });
   }
-  eliminarDocente(m : DocenteModel){
-    console.log("item para eliminar",m);
-    this.docenteService.eliminarDocente(m._id).subscribe({
+  eliminarEstudiante(e : EstudianteModel){
+    console.log("item para eliminar",e);
+    this.estudianteService.eliminarEstudiante(e._id).subscribe({
       next : (Response) => {
         console.log(Response);
         console.log("Datos eliminados exitosamente",Response); 
-        this.getDocentes();
+        this.getEstudiante();
       },
       error: (error) => {
         console.log(error);
       }
     });
   }
-    editarDocente(){
-      this.docenteService.editarDocente(this.docenteModelo).subscribe({
+    editarEstudiante(){
+      this.estudianteService.editarEstudiante(this.estudianteModelo).subscribe({
         next : (Response) => {
           console.log("Datos editados exitosamente",Response); 
-          this.getDocentes();
-          this.docenteModelo = new DocenteModel();
+          this.getEstudiante();
+          this.estudianteModelo = new EstudianteModel();
         },
         error: (error) => {
           console.log(error);

@@ -20,7 +20,11 @@ export const routes: Routes = [
       },
       {
         path: 'academico',
-        loadChildren: () => import('./views/academico/routes').then((m) => m.routes)
+        loadChildren: () => import('./views/academico/routes').then((a) => a.routes)
+      },
+      {
+        path: 'estudiantes',
+        loadChildren: () => import('./views/estudiantes/routes').then((e) => e.routes)
       },
       {
         path: 'matricula',
