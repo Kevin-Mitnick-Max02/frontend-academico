@@ -8,29 +8,23 @@
             <form cForm>
                 <div class="mb-3">
                     <label cLabel for="ci">Estudiante</label>
-                    <select aria-label="Default select example" cSelect>
+                    <select [(ngModel)]="matriculaModelo.estudiante" aria-label="Seleccione estudiante" cSelect name="estudiante">
                       <option>Seleccione estudiante</option>
-                      <option value="1">Juan</option>
-                      <option value="2">Kevin</option>
-                      <option value="3">Jose</option>
+                      <option value="66594911ebaa09465eadbadf">Kevin</option>
                     </select>
                   </div>
               <div class="mb-3">
                 <label cLabel for="nombres">Materia</label>
-                <select aria-label="Default select example" cSelect>
+                <select [(ngModel)]="matriculaModelo.materia" aria-label="Seleccione materia" cSelect name="materia">
                   <option>Seleccione materia</option>
-                  <option value="1">Juan</option>
-                  <option value="2">Kevin</option>
-                  <option value="3">Jose</option>
+                  <option value="66594abdebaa09465eadbaec">Programacion 1</option>
                 </select>
               </div>
               <div class="mb-3">
                 <label cLabel for="apellidos">Docente</label>
-                <select aria-label="Default select example" cSelect>
+                <select [(ngModel)]="matriculaModelo.docente" aria-label="Seleccione docente" cSelect name="docente" >
                   <option>Seleccione docente</option>
-                  <option value="1">Juan</option>
-                  <option value="2">Kevin</option>
-                  <option value="3">Jose</option>
+                  <option value="664ff0e448904b691aa54344">Ana</option>
                 </select>
               </div>
               <div class="mb-3">
@@ -38,6 +32,8 @@
                 <input cFormControl
                        id="fecha_matricula"
                        placeholder="2024-05-21"
+                       [(ngModel)]="matriculaModelo.fecha_matricula"
+                       name = "fecha"
                        type="date"
                 />
               </div>
@@ -46,6 +42,8 @@
                 <input cFormControl
                        id="Periodo"
                        placeholder="Anual"
+                       [(ngModel)]="matriculaModelo.periodo"
+                       name = "Periodo"
                        type="text"
                 />
               </div>
@@ -54,6 +52,8 @@
                 <input cFormControl
                        id="numero_semestre"
                        placeholder="0"
+                       [(ngModel)]="matriculaModelo.numero_semestre"
+                       name = "Semestre"
                        type="number"
                 />
               </div>
@@ -62,10 +62,12 @@
                 <input cFormControl
                        id="anio_estudio"
                        placeholder="1"
+                       [(ngModel)]="matriculaModelo.anio_estudio"
+                       name = "Año_de_estudio"
                        type="number"
                 />
               </div>
-              <button cButton class="me-1" color="primary" type="submit">
+              <button (click)="guardarMatricula()" cButton class="me-1" color="primary" type="submit">
                 Guardar
               </button>
             </form>
@@ -88,17 +90,22 @@
           </tr>
           </thead>
           <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>Tomas</td>
-            <td>2024-05-27</td>
-            <td>Anual</td>
-            <td>0</td>
-            <td>1</td>
-            <td><button cButton color="warning" variant="outline">Editar</button><button cButton color="danger" variant="outline">Eliminar</button></td>
-          </tr>
+            @for (m of listaMatriculas; track m; ){
+              <tr>
+                <th scope="row">1</th>
+                <td>{{m.estudiante}}</td>
+                <td>{{m.materia}}</td>
+                <td>{{m.docente}}</td>
+                <td>{{m.fecha_matricula}}</td>
+                <td>{{m.periodo}}</td>
+                <td>{{m.numero_semestre}}</td>
+                <td>{{m.anio_estudio}}</td>
+                <td>
+                  <button (click)="verMatricula(m)" cButton color="warning" variant="outline">Editar</button>
+                  <button (click)="eliminarMatricula(m)" cButton color="danger" variant="outline">Eliminar</button>
+                </td>
+              </tr>
+            }
           </tbody>
         </table>
       </c-col>

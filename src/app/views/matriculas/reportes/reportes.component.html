@@ -5,7 +5,34 @@
             <strong>Reporte de matricula</strong>
           </c-card-header>
           <c-card-body>
-            Ejemplo
+            <table cTable>
+                <thead>
+                    <tr>
+                      <th scope="col">#</th>
+                      <th scope="col">Estudiante</th>
+                      <th scope="col">Materia</th>
+                      <th scope="col">Docente</th>
+                      <th scope="col">Fecha</th>
+                      <th scope="col">Periodo</th>
+                      <th scope="col">Semestre</th>
+                      <th scope="col">Año de estudio</th>
+                      <th scope="col">Acciones</th>
+                    </tr>
+                    </thead>
+                <tbody>
+                    <tr>
+                      <th scope="row">1</th>
+                      <td>Mark</td>
+                      <td>Otto</td>
+                      <td>Tomas</td>
+                      <td>2024-05-27</td>
+                      <td>Anual</td>
+                      <td>0</td>
+                      <td>1</td>
+                      <td><button cButton color="warning" variant="outline">Editar</button><button cButton color="danger" variant="outline">Eliminar</button></td>
+                    </tr>
+                    </tbody>
+            </table>
             </c-card-body>
         </c-card>
         </c-col>
